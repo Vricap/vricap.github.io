@@ -4,79 +4,242 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <title>Personal Website</title>
+
+        <title>Vrica Gede Penggalih</title>
+
         <style>
+            :root {
+                --background: #0a0a0a;
+                --surface: #111111;
+                --text: #f5f5f5;
+                --muted: #737373;
+                --border: #242424;
+                --hover: #181818;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                min-height: 100%;
+            }
+
             body {
-                background-color: white;
-                color: black;
-                text-align: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 24px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: var(--background);
+                color: var(--text);
+
                 font-family: "JetBrains Mono", monospace;
+                -webkit-font-smoothing: antialiased;
             }
 
-            img {
-                height: 300px;
-                margin-bottom: 0;
-                padding-bottom: 0;
+            main {
+                width: 100%;
+                max-width: 480px;
+                padding: 48px 40px;
+
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+
+                text-align: center;
             }
 
-            ul {
-                padding: 0;
+            .profile {
+                margin-bottom: 40px;
             }
 
-            ul li {
-                margin-bottom: 18px;
+            .profile img {
+                width: 240px;
+                height: 240px;
+
+                display: block;
+                margin: 0 auto 28px;
+
+                object-fit: cover;
+                border-radius: 50%;
+
+                border: 1px solid var(--border);
+            }
+
+            h1 {
+                margin: 0;
+
+                font-size: 20px;
+                line-height: 1.4;
+                font-weight: 600;
+                letter-spacing: -0.04em;
+            }
+
+            .role {
+                margin: 8px 0 0;
+
+                color: var(--muted);
+                font-size: 12px;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 14px 16px;
+
+                color: var(--text);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+
+                font-size: 13px;
+                font-weight: 500;
+                text-decoration: none;
+
+                transition:
+                    background-color 150ms ease,
+                    border-color 150ms ease,
+                    transform 150ms ease;
+            }
+
+            nav a span:last-child {
+                color: var(--muted);
+                transition: transform 150ms ease;
+            }
+
+            nav a:hover {
+                background: var(--hover);
+                border-color: #333333;
+            }
+
+            nav a:hover span:last-child {
+                transform: translateX(3px);
+            }
+
+            nav a:active {
+                transform: translateY(1px);
+            }
+
+            .contact {
+                margin: 32px 0 0;
+                padding-top: 24px;
+
+                border-top: 1px solid var(--border);
+
+                color: var(--muted);
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .contact a {
+                color: var(--text);
+                text-underline-offset: 3px;
+            }
+
+            @media (max-width: 480px) {
+                body {
+                    padding: 16px;
+                }
+
+                main {
+                    padding: 40px 24px;
+                    border-radius: 12px;
+                }
+
+                .profile img {
+                    width: 200px;
+                    height: 200px;
+                }
             }
         </style>
     </head>
+
     <body>
-        <h1>Hey it's ME!</h1>
-        <img src="/me.jpg" />
-        <p style="margin-top: 0; padding-top: 0; font-size: 13px">
-            <em>vrica gede penggalih</em>
-        </p>
-        <p>What do you need?</p>
-        <ul>
-            <li>
-                <a target="_blank" href="https://vricap.github.io/portfolio/"
-                    >Portfolio-></a
-                >
-            </li>
-            <li>
+        <main>
+            <section class="profile">
+                <img
+                    src="/me.jpg"
+                    alt="Vrica Gede Penggalih"
+                    width="240"
+                    height="240"
+                    loading="lazy"
+                />
+
+                <h1>Vrica Gede Penggalih</h1>
+                <p class="role">Software Engineer</p>
+            </section>
+
+            <nav aria-label="Main navigation">
                 <a
+                    href="https://vricap.github.io/portfolio/"
                     target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Portfolio</span>
+                    <span>→</span>
+                </a>
+
+                <a
                     href="https://vricap.github.io/portfolio/Vrica-Gede-Penggalih-CV.pdf"
-                    >CV-></a
-                >
-            </li>            
-            <li>
-                <a target="_blank" href="https://github.com/Vricap">Github-></a>
-            </li>
-            <li>
-                <a
                     target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>CV</span>
+                    <span>→</span>
+                </a>
+
+                <a
+                    href="https://github.com/Vricap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>GitHub</span>
+                    <span>→</span>
+                </a>
+
+                <a
                     href="https://www.linkedin.com/in/vrica-gede-penggalih-266277260/"
-                    >Linkedin-></a
-                >
-            </li>
-            <li>
-                <a
                     target="_blank"
-                    href="https://x.com/Vrica_p"
-                    >Twitter-></a
+                    rel="noopener noreferrer"
                 >
-            </li>
-        </ul>
-        <p>
-            email me at
-            <a href="mailto:vricagedepenggalih@gmail.com"
-                >vricagedepenggalih@gmail.com</a
-            >
-        </p>
+                    <span>LinkedIn</span>
+                    <span>→</span>
+                </a>
+
+                <a
+                    href="https://x.com/Vrica_p"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>X / Twitter</span>
+                    <span>→</span>
+                </a>
+            </nav>
+
+            <p class="contact">
+                email me at
+                <a href="mailto:vricagedepenggalih@gmail.com">
+                    vricagedepenggalih@gmail.com
+                </a>
+            </p>
+        </main>
     </body>
 </html>
